@@ -74,7 +74,7 @@ export default function HeroSection() {
               onError={handleVideoError}
               className="h-full w-full object-cover grayscale"
             >
-              <source src="/videos/brad-testimonial.mp4" type="video/mp4" />
+              <source src="/videos/contact-bg.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           ) : (

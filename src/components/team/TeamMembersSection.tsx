@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { Linkedin, Twitter, Instagram } from 'lucide-react';
 import { Delius_Unicase } from 'next/font/google';
 
 const delius = Delius_Unicase({ 
@@ -198,7 +198,7 @@ export default function TeamMembersSection() {
                         className="text-white transition-transform hover:scale-110"
                         whileHover={{ scale: 1.1 }}
                       >
-                        <FaLinkedin size={24} />
+                        <Linkedin size={24} />
                       </motion.a>
                     )}
                     {member.socials.twitter && (
@@ -209,7 +209,7 @@ export default function TeamMembersSection() {
                         className="text-white transition-transform hover:scale-110"
                         whileHover={{ scale: 1.1 }}
                       >
-                        <FaTwitter size={24} />
+                        <Twitter size={24} />
                       </motion.a>
                     )}
                     {member.socials.instagram && (
@@ -220,7 +220,7 @@ export default function TeamMembersSection() {
                         className="text-white transition-transform hover:scale-110"
                         whileHover={{ scale: 1.1 }}
                       >
-                        <FaInstagram size={24} />
+                        <Instagram size={24} />
                       </motion.a>
                     )}
                   </div>
