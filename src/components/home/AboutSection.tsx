@@ -50,7 +50,7 @@ export function AboutSection() {
               <div className="relative z-10">
                 <h2 className={`text-5xl mb-6 ${caesarDressing.className}`}>about us</h2>
                 <p className="text-lg leading-relaxed opacity-90 mb-8">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text...
                 </p>
                 <Link 
                   href="/about" 

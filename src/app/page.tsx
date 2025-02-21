@@ -1,6 +1,6 @@
 'use client'
 
-import { BaseLayout } from '@/components/layout/BaseLayout'
+import BaseLayout from '@/components/layout/BaseLayout'
 import { HeroSection } from '@/components/home/HeroSection'
 import { AboutSection } from '@/components/home/AboutSection'
 import { SpecializationSection } from '@/components/home/SpecializationSection'

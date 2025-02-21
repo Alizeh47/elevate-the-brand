@@ -44,7 +44,7 @@ const StruggleSection = () => {
               <div className="absolute inset-0 border-2 border-purple-600 transform -rotate-6 animate-pulse"></div>
               <Image
                 src="/images/brad-struggle.jpg"
-                alt="Brad's Struggle"
+                alt="Brad&apos;s Struggle"
                 fill
                 className="object-cover relative z-10"
               />

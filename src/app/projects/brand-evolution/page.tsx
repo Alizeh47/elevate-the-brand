@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Hexagon, Target, Users, ChartLine, Palette } from 'lucide-react';
 import { Phudu } from 'next/font/google';
 import Header from '@/components/layout/Header';
+import Image from 'next/image';
 
 const phudu = Phudu({ subsets: ['latin'] });
 
@@ -89,12 +90,13 @@ export default function BrandEvolutionPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="rounded-2xl overflow-hidden mb-16 shadow-2xl"
+            className="rounded-2xl overflow-hidden mb-16 shadow-2xl relative h-[500px]"
           >
-            <img
+            <Image
               src="/images/projects/project1.jpg"
               alt="Brand Evolution Project"
-              className="w-full h-[500px] object-cover"
+              fill
+              className="object-cover"
             />
           </motion.div>
 

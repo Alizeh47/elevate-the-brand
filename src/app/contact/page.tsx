@@ -3,7 +3,7 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
 import { motion } from 'framer-motion';
-import { Star, Sparkles, Mail, Phone, MapPin, MessageSquare, Send, Zap, 
+import { Star, Sparkles, Mail, Phone, MapPin, MessageSquare, Send, 
   Award, Crown, Diamond, Heart, Coffee, Palette } from 'lucide-react';
 
 const FLOATING_ICONS = [

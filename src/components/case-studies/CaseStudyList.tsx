@@ -208,7 +208,7 @@ export default function CaseStudyList() {
             <div className="max-w-3xl mx-auto space-y-6">
               <p className={`${dmSerif.className} text-xl text-gray-600 leading-relaxed`}>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
               </p>
               <p className={`${dmSerif.className} text-xl text-gray-600 leading-relaxed`}>
                 When an unknown printer took a galley of type and scrambled it to make a type specimen book. 

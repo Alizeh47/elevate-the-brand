@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from './Header'
 import Footer from './Footer'
 
@@ -5,13 +6,11 @@ interface BaseLayoutProps {
   children: React.ReactNode
 }
 
-export function BaseLayout({ children }: BaseLayoutProps) {
+export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {children}
-      </main>
+      <main className="grow">{children}</main>
       <Footer />
     </div>
   )

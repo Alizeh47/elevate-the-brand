@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { Delius_Unicase, Phudu } from 'next/font/google';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const delius = Delius_Unicase({
   weight: ['400', '700'],
@@ -213,9 +214,11 @@ export default function CallToActionSection() {
                       />
                     </div>
                     <div className="mb-4 h-48 overflow-hidden rounded-lg">
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
+                        width={500}
+                        height={300}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
@@ -301,6 +304,24 @@ export default function CallToActionSection() {
             }}
           />
         ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="relative">
+          <div className="relative size-96 overflow-hidden rounded-lg">
+            <Image
+              src="/images/team-meeting.jpg"
+              alt="Team Meeting"
+              fill
+              className="size-full object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-800/65 to-purple-900/95 backdrop-blur-sm" />
+          </div>
+          {/* Decorative Elements */}
+          <div className="absolute -top-4 -left-4 size-24 border-t-4 border-l-4 border-purple-500/30"></div>
+          <div className="absolute -bottom-4 -right-4 size-24 border-b-4 border-r-4 border-purple-500/30"></div>
+        </div>
       </div>
     </section>
   );

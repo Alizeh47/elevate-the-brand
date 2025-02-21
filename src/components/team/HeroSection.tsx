@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/layout/Header';
 import { Phudu, Exo_2 } from 'next/font/google';
+import Image from 'next/image';
 
 const phudu = Phudu({ subsets: ['latin'] });
 const exo2 = Exo_2({ subsets: ['latin'] });
@@ -175,6 +176,31 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-8 h-1 w-32 bg-purple-500"
           />
+
+          {/* Team Member Images */}
+          <div className="relative">
+            <div className="size-40 relative">
+              <Image
+                src="/images/team/hero-image-1.jpg"
+                alt="Team member 1"
+                fill
+                className="size-full object-cover rounded-2xl"
+              />
+            </div>
+            <div className="size-32 absolute -bottom-4 -right-4">
+              <Image
+                src="/images/team/hero-image-2.jpg"
+                alt="Team member 2"
+                fill
+                className="size-full object-cover rounded-2xl"
+              />
+            </div>
+            <div className="absolute -right-2 top-1/2 -translate-y-1/2 flex flex-col gap-1">
+              <div className="size-2 bg-purple-600 rounded-full"></div>
+              <div className="size-1.5 bg-purple-500 rounded-full"></div>
+              <div className="size-1 bg-purple-400 rounded-full"></div>
+            </div>
+          </div>
         </div>
       </section>
     </>

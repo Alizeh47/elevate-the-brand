@@ -3,14 +3,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sigmar } from 'next/font/google';
 import { Phudu } from 'next/font/google';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/utils/supabase';
 import type { User } from '@supabase/supabase-js';
 
-const sigmar = Sigmar({ subsets: ['latin'], weight: ['400'] });
 const phudu = Phudu({ subsets: ['latin'] });
 
 const HeroSection = () => {
@@ -263,7 +261,7 @@ const HeroSection = () => {
               <span className="inline-block hover:translate-y-[-2px] transition-transform duration-200 delay-[300ms]">e</span>
               <span className="inline-block hover:translate-y-[-2px] transition-transform duration-200 delay-[350ms]">n</span>
               <span className="inline-block hover:translate-y-[-2px] transition-transform duration-200 delay-[400ms]">t</span>
-              <span className="inline-block hover:translate-y-[-2px] transition-transform duration-200 delay-[450ms]">'</span>
+              <span className="inline-block hover:translate-y-[-2px] transition-transform duration-200 delay-[450ms]">&apos;</span>
               <span className="inline-block hover:translate-y-[-2px] transition-transform duration-200 delay-[500ms]">s</span>
             </span>
             {/* Geometric Effects with Animation */}
@@ -289,6 +287,16 @@ const HeroSection = () => {
         <div className="absolute right-1/4 top-1/4 w-20 h-20">
           <div className="absolute inset-0 border-4 border-purple-300/40 rounded-full animate-pulse"></div>
           <div className="absolute inset-4 border-4 border-purple-200/30 rounded-full animate-spin-slow"></div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-4">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="col-span-4">
+              <div className="size-1 bg-white/20 rounded-full"></div>
+              <div className="size-1.5 bg-white/30 rounded-full mt-2"></div>
+              <div className="size-2 bg-white/40 rounded-full mt-2"></div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

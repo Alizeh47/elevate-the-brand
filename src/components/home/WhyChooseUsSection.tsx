@@ -276,7 +276,7 @@ export function WhyChooseUsSection() {
               viewport={{ once: true }}
             >
               <h3 className="text-3xl bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent font-light mb-6">
-                We Don't Stretch Word Count
+                We Don&apos;t Stretch Word Count
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 Quality over quantity is our mantra. We focus on delivering impactful, concise content that resonates with your audience and drives results, not just filling pages.

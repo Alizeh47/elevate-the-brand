@@ -10,7 +10,7 @@ import TestimonialSection from '@/components/story/TestimonialSection';
 // Add metadata for the page
 export const metadata = {
   title: 'Customer Story - BrandElevate',
-  description: "Discover Brad's journey with BrandElevate and how we transformed his brand's content strategy.",
+  description: "Discover Brad&apos;s journey with BrandElevate and how we transformed his brand&apos;s content strategy.",
 };
 
 export default function StoryPage() {

@@ -1,159 +1,105 @@
-import { useMemo, useState, useCallback } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { Star } from 'lucide-react';
 
 interface Testimonial {
-  id: number
-  name: string
-  text: string
+  id: number;
+  name: string;
+  role: string;
+  content: string;
+  rating: number;
+  image: string;
 }
 
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    role: "Marketing Director",
+    content: "Working with this team has transformed our digital presence. Their strategic approach and creative solutions have delivered exceptional results.",
+    rating: 5,
+    image: "/images/testimonials/sarah.jpg"
+  },
+  {
+    id: 2,
+    name: "Michael Chen",
+    role: "CEO, TechStart",
+    content: "The level of professionalism and innovation they bring to each project is outstanding. They&apos;ve become an invaluable partner in our growth.",
+    rating: 5,
+    image: "/images/testimonials/michael.jpg"
+  },
+  {
+    id: 3,
+    name: "Emma Davis",
+    role: "Brand Manager",
+    content: "Their attention to detail and commitment to excellence sets them apart. They don&apos;t just meet expectations - they exceed them.",
+    rating: 5,
+    image: "/images/testimonials/emma.jpg"
+  }
+];
+
 export default function TestimonialSection() {
-  // Create stable grid elements
-  const gridCells = useMemo(() => Array.from({ length: 12 }), [])
-  
-  // Testimonials data
-  const testimonials = useMemo<Testimonial[]>(() => [
-    {
-      id: 1,
-      name: "alex volkov",
-      text: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text..."
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      text: "Our partnership with Brand Elevate has transformed our content strategy. Their attention to detail and commitment to quality is unmatched..."
-    },
-    {
-      id: 3,
-      name: "Mike Johnson",
-      text: "The team at Brand Elevate consistently delivers exceptional results. Their expertise in content creation has helped us reach new heights..."
-    }
-  ], [])
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
 
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  const goToNext = useCallback(() => {
-    setActiveIndex((current) => (current + 1) % testimonials.length)
-  }, [testimonials.length])
-
-  const goToPrevious = useCallback(() => {
-    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length)
-  }, [testimonials.length])
-
-  // Handle keyboard navigation
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') {
-      goToPrevious()
-    } else if (e.key === 'ArrowRight') {
-      goToNext()
-    }
-  }, [goToNext, goToPrevious])
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-24 relative">
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="h-full w-full grid grid-cols-12">
-          {gridCells.map((_, i) => (
-            <div key={i} className="border-l border-black" />
-          ))}
-        </div>
-        <div className="grid grid-rows-12 h-full w-full absolute top-0">
-          {gridCells.map((_, i) => (
-            <div key={i} className="border-t border-black" />
-          ))}
-        </div>
-      </div>
-
+    <section className="bg-gradient-to-b from-gray-50 to-white py-24">
       <div className="container mx-auto px-4">
-        <div className="relative">
-          {/* Large Quote Icons */}
-          <div className="absolute -left-8 -top-16 z-10">
-            <div className="relative">
-              <div className="text-[180px] font-serif text-pink-500 leading-none opacity-90 select-none">"</div>
-              <div className="absolute top-0 left-1 text-[180px] font-serif text-pink-400 leading-none opacity-50 blur-sm select-none">"</div>
-            </div>
-          </div>
-          <div className="absolute -left-4 -top-12 z-0">
-            <div className="text-[180px] font-serif text-pink-300 leading-none opacity-20 blur-md select-none">"</div>
-          </div>
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-gray-900">What Our Clients Say</h2>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            Don&apos;t just take our word for it - hear from some of our satisfied clients
+            about their experience working with us.
+          </p>
+        </div>
 
-          {/* Main Content Box */}
-          <div className="relative bg-purple-600 p-16 overflow-hidden group"
-               tabIndex={0}
-               onKeyDown={handleKeyDown}
-               role="region"
-               aria-label="Testimonials slider">
-            {/* Navigation Buttons */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-pink-300"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-pink-300"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Geometric Patterns */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              {/* Circles */}
-              <div className="absolute -right-20 -top-20 w-64 h-64 border-[30px] border-white rounded-full" />
-              <div className="absolute -left-10 -bottom-10 w-40 h-40 border-[20px] border-white rounded-full" />
-              
-              {/* Lines */}
-              <div className="absolute top-0 left-0 w-full h-full">
-                <div className="absolute top-1/4 right-0 w-32 h-0.5 bg-white transform rotate-45" />
-                <div className="absolute bottom-1/4 left-0 w-32 h-0.5 bg-white transform -rotate-45" />
-              </div>
-              
-              {/* Squares */}
-              <div className="absolute top-1/2 left-1/4 w-16 h-16 border-[10px] border-white transform rotate-45" />
-              <div className="absolute bottom-1/3 right-1/4 w-12 h-12 border-[8px] border-white transform -rotate-12" />
-            </div>
-
-            {/* Content */}
-            <div className="relative text-white max-w-3xl mx-auto">
-              <div className="mb-8">
-                <div className="transition-all duration-300 transform"
-                     style={{
-                       opacity: 1,
-                       transform: 'translateX(0)'
-                     }}>
-                  <h3 className="text-3xl font-light mb-4 tracking-wide">{testimonials[activeIndex].name}</h3>
-                  <div className="w-12 h-0.5 bg-pink-400 mb-6"></div>
-                  <p className="text-base opacity-90 leading-relaxed">
-                    {testimonials[activeIndex].text}
-                  </p>
+        <div className="mx-auto max-w-4xl">
+          <div className="relative rounded-2xl bg-white p-8 shadow-lg">
+            <div className="mb-6 flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="relative size-16 overflow-hidden rounded-full">
+                  <Image
+                    src={currentTestimonial.image}
+                    alt={currentTestimonial.name}
+                    width={64}
+                    height={64}
+                    className="size-full object-cover"
+                    onError={() => setImageErrors(prev => ({ ...prev, [currentIndex]: true }))}
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">{currentTestimonial.name}</h3>
+                  <p className="text-gray-600">{currentTestimonial.role}</p>
                 </div>
               </div>
-
-              {/* Navigation Dots */}
-              <div className="absolute top-0 right-0 flex gap-2">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveIndex(i)}
-                    className={`w-2 h-2 rounded-full bg-pink-400 transition-all duration-300 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 focus:ring-offset-purple-600 ${
-                      i === activeIndex ? 'w-6' : ''
-                    }`}
-                    style={{
-                      opacity: i === activeIndex ? '1' : '0.4'
-                    }}
-                    aria-label={`View testimonial ${i + 1}`}
-                    aria-current={i === activeIndex ? 'true' : 'false'}
-                  />
+              <div className="flex gap-1">
+                {Array.from({ length: currentTestimonial.rating }).map((_, i) => (
+                  <Star key={i} className="size-6 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
+            </div>
+
+            <blockquote className="text-lg text-gray-700">
+              &quot;{currentTestimonial.content}&quot;
+            </blockquote>
+
+            <div className="mt-8 flex justify-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`size-3 rounded-full transition-colors ${
+                    index === currentIndex ? 'bg-purple-600' : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 } 

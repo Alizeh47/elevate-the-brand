@@ -55,7 +55,7 @@ export function TestimonialSection() {
                 <h3 className="text-3xl font-light mb-4 tracking-wide">John doe</h3>
                 <div className="w-12 h-0.5 bg-pink-400 mb-6"></div>
                 <p className="text-base opacity-90 leading-relaxed">
-                  Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text...
+                  Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text...
                 </p>
               </div>
 

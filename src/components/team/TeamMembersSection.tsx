@@ -4,6 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Instagram } from 'lucide-react';
 import { Delius_Unicase } from 'next/font/google';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const delius = Delius_Unicase({ 
   weight: ['400', '700'],
@@ -167,66 +169,56 @@ export default function TeamMembersSection() {
 
       {/* Team Members Grid */}
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative overflow-hidden rounded-lg ${
-                member.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
-            >
-              <div className="aspect-w-3 aspect-h-4">
-                <img
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member) => (
+            <div key={member.name} className="relative group overflow-hidden rounded-2xl">
+              <div className="relative size-96 overflow-hidden">
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="h-full w-full object-cover grayscale transition-all duration-300 hover:grayscale-0"
+                  fill
+                  className="size-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div
-                  className={`absolute inset-0 flex flex-col items-center justify-center bg-purple-500 bg-opacity-80 p-6 text-white opacity-0 transition-all duration-300 hover:opacity-100`}
-                >
-                  <h3 className="mb-2 text-2xl font-bold">{member.name}</h3>
-                  <p className="mb-4 text-lg">{member.role}</p>
-                  <div className="flex space-x-4">
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-xl font-semibold">{member.name}</h3>
+                  <p className="text-sm text-gray-300">{member.role}</p>
+                  <div className="mt-4 flex gap-4">
                     {member.socials.linkedin && (
-                      <motion.a
+                      <Link
                         href={member.socials.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white transition-transform hover:scale-110"
-                        whileHover={{ scale: 1.1 }}
+                        className="text-white hover:text-purple-400 duration-200"
                       >
                         <Linkedin size={24} />
-                      </motion.a>
+                      </Link>
                     )}
                     {member.socials.twitter && (
-                      <motion.a
+                      <Link
                         href={member.socials.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white transition-transform hover:scale-110"
-                        whileHover={{ scale: 1.1 }}
+                        className="text-white hover:text-purple-400 duration-200"
                       >
                         <Twitter size={24} />
-                      </motion.a>
+                      </Link>
                     )}
                     {member.socials.instagram && (
-                      <motion.a
+                      <Link
                         href={member.socials.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-white transition-transform hover:scale-110"
-                        whileHover={{ scale: 1.1 }}
+                        className="text-white hover:text-purple-400 duration-200"
                       >
                         <Instagram size={24} />
-                      </motion.a>
+                      </Link>
                     )}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

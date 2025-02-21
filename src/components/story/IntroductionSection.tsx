@@ -44,7 +44,7 @@ const IntroductionSection = () => {
               <div className="absolute inset-0 bg-purple-100/50 backdrop-blur-sm"></div>
               <Image
                 src="/images/brad-profile.jpg"
-                alt="Brad's Profile"
+                alt="Brad&apos;s Profile"
                 fill
                 className="object-cover relative z-10"
               />

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/utils/supabase'
-import { BaseLayout } from '@/components/layout/BaseLayout'
+import BaseLayout from '@/components/layout/BaseLayout'
 import { Lock, Mail, User, Shield, KeyRound, UserPlus } from 'lucide-react'
 import Header from '@/components/layout/Header'
 

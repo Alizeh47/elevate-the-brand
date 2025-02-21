@@ -34,7 +34,7 @@ export function HeroSection() {
               <div className="mt-8 flex items-center">
                 <div className="w-12 h-0.5 bg-purple-600 mr-6"></div>
                 <p className="text-gray-600 max-w-md text-lg">
-                  Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.
+                  Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
                 </p>
               </div>
             </motion.div>
