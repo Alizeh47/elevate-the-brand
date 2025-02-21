@@ -75,7 +75,7 @@ export default function HeroSection() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover grayscale opacity-75"
             >
-              <source src="/videos/team-meeting.mp4" type="video/mp4" />
+              <source src="/videos/meeting.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-pink-300/10 backdrop-blur-[px]" />
           </div>
