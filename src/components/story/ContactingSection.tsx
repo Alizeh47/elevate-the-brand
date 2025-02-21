@@ -29,200 +29,102 @@ const ContactingSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center py-32 overflow-hidden">
-      {/* Section Border Graphics */}
+    <section className="relative min-h-screen flex items-center py-32 overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50">
+      {/* Large Geometric Shapes */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Top Border with Geometric Designs */}
-        <div className="absolute inset-x-0 top-0 size-20">
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-300/50 to-transparent"></div>
-          <div className="absolute left-10 top-0 size-20">
-            <div className="absolute inset-0 border-t-2 border-l-2 border-purple-300/30 rounded-tl-3xl"></div>
-            <div className="absolute top-4 left-4 size-3 bg-purple-400/30 rounded-full animate-ping"></div>
-            <div className="absolute top-6 left-6 size-6 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-            <div className="absolute top-2 left-2 size-4 border-2 border-purple-300/30 rounded-full"></div>
-          </div>
-          {/* Right Top Corner */}
-          <div className="absolute right-10 top-0 size-20">
-            <div className="absolute inset-0 border-t-2 border-r-2 border-purple-300/30 rounded-tr-3xl"></div>
-            <div className="absolute top-4 right-4 size-3 bg-purple-400/30 rounded-full animate-ping delay-300"></div>
-            <div className="absolute top-6 right-6 size-6 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-            <div className="absolute top-2 right-2 size-4 border-2 border-purple-300/30 rounded-full"></div>
-          </div>
-        </div>
-
-        {/* Bottom Border with Geometric Designs */}
-        <div className="absolute inset-x-0 bottom-0 h-20">
-          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-purple-300/50 to-transparent"></div>
-          {/* Left Bottom Corner */}
-          <div className="absolute left-10 bottom-0 size-20">
-            <div className="absolute inset-0 border-b-2 border-l-2 border-purple-300/30 rounded-bl-3xl"></div>
-            <div className="absolute bottom-4 left-4 size-3 bg-purple-400/30 rounded-full animate-ping delay-150"></div>
-            <div className="absolute bottom-6 left-6 size-6 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-            <div className="absolute bottom-2 left-2 size-4 border-2 border-purple-300/30 rounded-full"></div>
-          </div>
-          {/* Right Bottom Corner */}
-          <div className="absolute right-10 bottom-0 size-20">
-            <div className="absolute inset-0 border-b-2 border-r-2 border-purple-300/30 rounded-br-3xl"></div>
-            <div className="absolute bottom-4 right-4 size-3 bg-purple-400/30 rounded-full animate-ping delay-500"></div>
-            <div className="absolute bottom-6 right-6 size-6 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-            <div className="absolute bottom-2 right-2 size-4 border-2 border-purple-300/90 rounded-full"></div>
-          </div>
-        </div>
-
-        {/* Side Borders with Enhanced Geometric Designs */}
-        <div className="absolute inset-y-20 left-0 w-1">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-300/30 to-transparent"></div>
-          <div className="absolute top-1/4 -left-3 size-6 border border-purple-300/30 rounded-full animate-pulse"></div>
-          <div className="absolute top-1/4 -left-2 size-4 border border-purple-900/80 rotate-45"></div>
-          <div className="absolute bottom-1/4 -left-3 size-6 border border-purple-300/30 rounded-full animate-pulse delay-300"></div>
-          <div className="absolute bottom-1/4 -left-2 size-4 border border-purple-300/30 rotate-45"></div>
-        </div>
-        <div className="absolute inset-y-20 right-0 w-1">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-300/30 to-transparent"></div>
-          <div className="absolute top-1/4 -right-3 size-6 border border-purple-300/30 rounded-full animate-pulse delay-150"></div>
-          <div className="absolute top-1/4 -right-2 size-4 border border-purple-300/30 rotate-45"></div>
-          <div className="absolute bottom-1/4 -right-3 size-6 border border-purple-300/30 rounded-full animate-pulse delay-500"></div>
-          <div className="absolute bottom-1/4 -right-2 size-4 border border-purple-300/30 rotate-45"></div>
-        </div>
-
-        {/* Corner Connectors with Geometric Elements */}
-        <div className="absolute top-20 left-0 w-10 h-1">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-800/30 to-transparent animate-pulse"></div>
-          <div className="absolute left-0 -top-2 size-4 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-        </div>
-        <div className="absolute top-20 right-0 w-10 h-1">
-          <div className="absolute inset-0 bg-gradient-to-l from-purple-800/30 to-transparent animate-pulse delay-150"></div>
-          <div className="absolute right-0 -top-2 size-4 border border-purple-900/90 rotate-45 animate-spin-slow"></div>
-        </div>
-        <div className="absolute bottom-20 left-0 w-10 h-1">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-300/30 to-transparent animate-pulse delay-300"></div>
-          <div className="absolute left-0 -bottom-2 size-4 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-        </div>
-        <div className="absolute bottom-20 right-0 w-10 h-1">
-          <div className="absolute inset-0 bg-gradient-to-l from-purple-300/30 to-transparent animate-pulse delay-500"></div>
-          <div className="absolute right-0 -bottom-2 size-4 border border-purple-300/30 rotate-45 animate-spin-slow"></div>
-        </div>
-      </div>
-
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-20">
-        <Image
-          src="/images/contact-bg.jpg"
-          alt="Contact Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Image Overlay for better contrast */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-pink-800/40 backdrop-blur-sm"></div>
-      </div>
-
-      {/* Background Triangles with Lighter Colors */}
-      <div className="absolute inset-0 -z-10">
-        {/* Left Triangle */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-pink-200/70 via-purple-100/70 to-pink-200/10"
-          style={{
-            clipPath: 'polygon(0 0, 100% 0, 0 100%)',
-            opacity: '0.025'
-          }}
-        />
-        {/* Right Triangle */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-bl from-pink-200 via-pink-100 to-pink-200"
-          style={{
-            clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
-            opacity: '0.025'
-          }}
-        />
-        {/* Subtle Overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
-        {/* Light blur effect */}
-        <div className="absolute inset-0 backdrop-blur-[50px]"></div>
-      </div>
-
-      {/* Moving Dot Patterns */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Grid of Dots */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at center, rgba(139, 92, 246, 0.1) 0%, transparent 1px)`,
-          backgroundSize: '30px 30px',
-          animation: 'moveBackground 20s linear infinite'
-        }}></div>
+        {/* Large Circle */}
+        <div className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] border-[2px] border-purple-300/30 rounded-full animate-spin-slow" />
+        <div className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] border-[1px] border-purple-200/20 rounded-full animate-spin-slow [animation-direction:reverse]" />
         
-        {/* Fixed Pattern Dots */}
+        {/* Large Square */}
+        <div className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] border-[2px] border-pink-300/30 rotate-45 animate-spin-slower" />
+        <div className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] border-[1px] border-pink-200/20 rotate-45 animate-spin-slower [animation-direction:reverse]" />
+      </div>
+
+      {/* Geometric Lines Pattern */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Horizontal Lines - More Prominent */}
         <div className="absolute inset-0">
-          {[
-            { left: '20%', top: '20%', delay: '0s' },
-            { left: '80%', top: '15%', delay: '1s' },
-            { left: '40%', top: '40%', delay: '2s' },
-            { left: '60%', top: '30%', delay: '3s' },
-            { left: '25%', top: '60%', delay: '4s' },
-            { left: '75%', top: '50%', delay: '5s' },
-            { left: '35%', top: '80%', delay: '6s' },
-            { left: '85%', top: '70%', delay: '7s' },
-            { left: '15%', top: '45%', delay: '8s' },
-            { left: '65%', top: '85%', delay: '9s' },
-            { left: '45%', top: '25%', delay: '10s' },
-            { left: '90%', top: '90%', delay: '11s' },
-            { left: '10%', top: '70%', delay: '12s' },
-            { left: '50%', top: '55%', delay: '13s' },
-            { left: '70%', top: '35%', delay: '14s' }
-          ].map((dot, index) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <div
-              key={index}
-              className="absolute size-1 rounded-full bg-purple-400/20"
+              key={`h-${i}`}
+              className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-purple-300/40 to-transparent"
+          style={{
+                top: `${(i + 1) * 8.33}%`,
+                transform: `translateY(${Math.sin(i) * 20}px)`,
+              }}
+            />
+          ))}
+      </div>
+
+        {/* Vertical Lines - More Prominent */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <div
+              key={`v-${i}`}
+              className="absolute h-full w-[2px] bg-gradient-to-b from-transparent via-pink-300/30 to-transparent"
               style={{
-                left: dot.left,
-                top: dot.top,
-                animation: 'floatDot 15s linear infinite',
-                animationDelay: dot.delay
+                left: `${(i + 1) * 6.66}%`,
+                transform: `translateX(${Math.cos(i) * 20}px)`,
               }}
             />
           ))}
         </div>
       </div>
 
-      {/* Enhanced Decorative Background */}
+      {/* Enhanced Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Floating Shapes with Lighter Colors */}
-        <div className="absolute top-20 left-10 size-32 border-4 border-purple-300/30 rounded-full animate-float"></div>
-        <div className="absolute bottom-40 right-20 size-24 border-4 border-pink-300/30 rotate-45 animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/3 right-1/4 size-20 border-4 border-purple-300/30 rotate-[30deg] animate-float" style={{ animationDelay: '2s' }}></div>
-
-        {/* Additional Geometric Elements */}
-        <div className="absolute top-1/4 left-1/3 size-40">
-          <div className="absolute inset-0 border-2 border-purple-300/30 rounded-full animate-spin-slow"></div>
-          <div className="absolute inset-4 border-2 border-pink-300/30 rounded-full animate-spin-slow [animation-direction:reverse]"></div>
+        {/* Large Decorative Circles */}
+        <div className="absolute top-20 left-20 w-96 h-96">
+          <div className="absolute inset-0 border-2 border-purple-300/40 rounded-full animate-pulse" />
+          <div className="absolute inset-8 border border-purple-200/30 rounded-full animate-pulse delay-150" />
+          <div className="absolute inset-16 border border-purple-100/20 rounded-full animate-pulse delay-300" />
+        </div>
+        
+        <div className="absolute -bottom-20 -right-20 w-80 h-80">
+          <div className="absolute inset-0 border-2 border-pink-300/40 rounded-full animate-pulse delay-200" />
+          <div className="absolute inset-8 border border-pink-200/30 rounded-full animate-pulse delay-300" />
+          <div className="absolute inset-16 border border-pink-100/20 rounded-full animate-pulse delay-500" />
         </div>
 
-        {/* Floating Dots with Lighter Colors */}
-        <div className="absolute top-1/2 left-20 flex gap-2">
-          <div className="size-2 bg-purple-400/40 rounded-full animate-ping"></div>
-          <div className="size-2 bg-purple-400/40 rounded-full animate-ping delay-150"></div>
-          <div className="size-2 bg-purple-400/40 rounded-full animate-ping delay-300"></div>
-        </div>
-        <div className="absolute bottom-1/3 right-32 flex gap-2">
-          <div className="size-2 bg-pink-400/40 rounded-full animate-ping"></div>
-          <div className="size-2 bg-pink-400/40 rounded-full animate-ping delay-150"></div>
-          <div className="size-2 bg-pink-400/40 rounded-full animate-ping delay-300"></div>
+        {/* Geometric Patterns */}
+        <div className="absolute top-1/4 right-1/4 w-40 h-40">
+          <div className="absolute inset-0 border-2 border-purple-300/40 rotate-45 animate-spin-slow" />
+          <div className="absolute inset-4 border border-purple-200/30 rotate-[60deg] animate-spin-slow delay-150" />
+          <div className="absolute inset-8 border border-purple-100/20 rotate-[30deg] animate-spin-slow delay-300" />
         </div>
 
-        {/* Gradient Lines with Lighter Colors */}
-        <div className="absolute top-1/4 right-1/4 w-32 h-px bg-gradient-to-r from-transparent via-purple-300/40 to-transparent rotate-45"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-32 h-px bg-gradient-to-r from-transparent via-pink-300/40 to-transparent -rotate-45"></div>
-
-        {/* Animated Corner Elements */}
-        <div className="absolute top-0 right-0 size-40 overflow-hidden">
-          <div className="absolute top-8 right-8 size-16 border-t-2 border-r-2 border-purple-300/30 rotate-[30deg] animate-pulse"></div>
-        </div>
-        <div className="absolute bottom-0 left-0 size-40 overflow-hidden">
-          <div className="absolute bottom-8 left-8 size-16 border-b-2 border-l-2 border-pink-300/30 -rotate-[30deg] animate-pulse delay-300"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-32 h-32">
+          <div className="absolute inset-0 border-2 border-pink-300/40 rotate-12 animate-spin-slow" />
+          <div className="absolute inset-4 border border-pink-200/30 rotate-45 animate-spin-slow delay-150" />
+          <div className="absolute inset-8 border border-pink-100/20 rotate-[60deg] animate-spin-slow delay-300" />
         </div>
 
-        {/* Gradient Orbs with Lighter Colors */}
-        <div className="absolute top-1/3 right-1/3 size-40 rounded-full bg-gradient-to-br from-purple-300/20 to-transparent blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 size-48 rounded-full bg-gradient-to-br from-pink-300/20 to-transparent blur-2xl animate-pulse delay-300"></div>
+        {/* Enhanced Floating Dots */}
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div
+            key={`dots-${i}`}
+            className="absolute flex gap-3"
+            style={{
+              top: `${20 + i * 15}%`,
+              left: `${10 + i * 20}%`,
+            }}
+          >
+            <div className="w-2 h-2 rounded-full bg-purple-400/50 animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
+            <div className="w-2 h-2 rounded-full bg-pink-400/50 animate-pulse" style={{ animationDelay: `${i * 300}ms` }} />
+            <div className="w-2 h-2 rounded-full bg-purple-300/50 animate-pulse" style={{ animationDelay: `${i * 400}ms` }} />
+          </div>
+        ))}
+
+        {/* Corner Decorations */}
+        <div className="absolute top-0 right-0 w-64 h-64">
+          <div className="absolute top-8 right-8 w-32 h-32 border-t-4 border-r-4 border-purple-300/40 rounded-tr-3xl" />
+          <div className="absolute top-12 right-12 w-24 h-24 border-t-2 border-r-2 border-purple-200/30 rounded-tr-2xl" />
+        </div>
+        <div className="absolute bottom-0 left-0 w-64 h-64">
+          <div className="absolute bottom-8 left-8 w-32 h-32 border-b-4 border-l-4 border-pink-300/40 rounded-bl-3xl" />
+          <div className="absolute bottom-12 left-12 w-24 h-24 border-b-2 border-l-2 border-pink-200/30 rounded-bl-2xl" />
+        </div>
       </div>
 
       {/* Content Container */}
@@ -239,7 +141,7 @@ const ContactingSection = () => {
           </p>
 
           {/* Chat Messages */}
-          <div className="space-y-8 max-w-2xl mx-auto">
+          <div className="space-y-8 max-w-2xl mx-auto backdrop-blur-sm">
             {messages.map((message, index) => (
               <div
                 key={index}
@@ -248,7 +150,7 @@ const ContactingSection = () => {
                 }`}
               >
                 {/* Avatar */}
-                <div className="relative size-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-purple-300/50">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-purple-300/50">
                   <Image
                     src={message.avatar}
                     alt={message.name}
@@ -262,10 +164,10 @@ const ContactingSection = () => {
                   message.sender === 'brad' ? 'items-start' : 'items-end'
                 }`}>
                   <span className="text-purple-800 text-sm mb-1">{message.name}</span>
-                  <div className={`max-w-sm rounded-2xl p-4 ${
+                  <div className={`max-w-sm rounded-2xl p-4 backdrop-blur-md ${
                     message.sender === 'brad'
-                      ? 'bg-white text-gray-800 rounded-tl-none shadow-lg'
-                      : 'bg-purple-100 backdrop-blur-sm text-purple-900 rounded-tr-none shadow-lg'
+                      ? 'bg-white/90 text-gray-800 rounded-tl-none shadow-lg'
+                      : 'bg-purple-100/90 text-purple-900 rounded-tr-none shadow-lg'
                   }`}>
                     <p className="text-sm md:text-base">{message.text}</p>
                   </div>
@@ -277,15 +179,13 @@ const ContactingSection = () => {
       </div>
 
       <style jsx>{`
-        @keyframes moveBackground {
-          0% { background-position: 0 0; }
-          100% { background-position: 30px 30px; }
-        }
-        @keyframes floatDot {
-          0% { transform: translate(0, 0); }
-          33% { transform: translate(30px, -30px); }
-          66% { transform: translate(-30px, 30px); }
-          100% { transform: translate(0, 0); }
+        @keyframes spin-slower {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
       `}</style>
     </section>

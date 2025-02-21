@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const exo2 = Exo_2({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-exo2",
+});
 
 export const metadata: Metadata = {
   title: "BrandElevate",
@@ -15,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={exo2.variable}>
+      <body className={exo2.className}>
         {children}
       </body>
     </html>

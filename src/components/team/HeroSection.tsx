@@ -2,7 +2,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Header from '@/components/layout/Header';
 import { Phudu, Exo_2 } from 'next/font/google';
 import Image from 'next/image';
 
@@ -60,149 +59,146 @@ export default function HeroSection() {
   };
 
   return (
-    <>
-      <Header />
-      <section className="relative h-screen w-full overflow-hidden bg-gray-100">
-        {/* Background Video with Overlay */}
-        <div className="absolute inset-0">
-          {!videoError ? (
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              onError={handleVideoError}
-              className="h-full w-full object-cover grayscale"
-            >
-              <source src="/videos/contact-bg.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <div className="h-full w-full bg-gradient-to-b from-gray-900 to-purple-900" />
-          )}
-          <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-        </div>
-
-        {/* Animated Stars */}
-        <div className="absolute inset-0 pointer-events-none">
-          {STARS_POSITIONS.map((star, i) => (
-            <motion.div
-              key={i}
-              className={`absolute ${
-                star.size === 'sm' ? 'h-1 w-1' : star.size === 'md' ? 'h-1.5 w-1.5' : 'h-2 w-2'
-              } rotate-45 bg-white`}
-              style={star}
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.3, 0.8, 0.3],
-                rotate: ['45deg', '225deg', '45deg'],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                delay: i * 0.2,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Geometric Shapes */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute right-20 top-20 h-40 w-40 rounded-full border-2 border-purple-500 backdrop-blur-sm"
-        />
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 0.1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute left-10 top-40 h-32 w-32 rotate-45 border-2 border-purple-500 backdrop-blur-sm"
-        />
-
-        {/* Animated Dots */}
-        <div className="absolute left-0 top-0 h-full w-full">
-          {DOTS_POSITIONS.map((position, i) => (
-            <motion.div
-              key={i}
-              className="absolute h-2 w-2 rounded-full bg-purple-500 backdrop-blur-sm"
-              style={position}
-              animate={{
-                y: [0, 10, 0],
-                opacity: [0.5, 1, 0.5],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: i * 0.1,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex h-full flex-col items-center justify-center">
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className={`text-center text-6xl font-bold text-white ${phudu.className}`}
+    <section className="relative h-screen w-full overflow-hidden bg-gray-100">
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0">
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            onError={handleVideoError}
+            className="h-full w-full object-cover grayscale"
           >
-            meet our{' '}
-            <span className="rounded bg-purple-500/80 px-4 py-2 backdrop-blur-sm">team</span>
-          </motion.h1>
+            <source src="/videos/contact-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <div className="h-full w-full bg-gradient-to-b from-gray-900 to-purple-900" />
+        )}
+        <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      </div>
 
-          {/* Introduction Text */}
+      {/* Animated Stars */}
+      <div className="absolute inset-0 pointer-events-none">
+        {STARS_POSITIONS.map((star, i) => (
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className={`mt-8 max-w-2xl text-center ${exo2.className}`}
-          >
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Passionate innovators, creative minds, and dedicated professionals.
-              <br />
-              Together, we transform ideas into exceptional digital experiences.
-              <br />
-              Our diverse team brings expertise and innovation to every project.
-            </p>
-          </motion.div>
-
-          {/* Geometric Lines */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 h-1 w-32 bg-purple-500"
+            key={i}
+            className={`absolute ${
+              star.size === 'sm' ? 'h-1 w-1' : star.size === 'md' ? 'h-1.5 w-1.5' : 'h-2 w-2'
+            } rotate-45 bg-white`}
+            style={star}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.8, 0.3],
+              rotate: ['45deg', '225deg', '45deg'],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: i * 0.2,
+            }}
           />
+        ))}
+      </div>
 
-          {/* Team Member Images */}
-          <div className="relative">
-            <div className="size-40 relative">
-              <Image
-                src="/images/team/hero-image-1.jpg"
-                alt="Team member 1"
-                fill
-                className="size-full object-cover rounded-2xl"
-              />
-            </div>
-            <div className="size-32 absolute -bottom-4 -right-4">
-              <Image
-                src="/images/team/hero-image-2.jpg"
-                alt="Team member 2"
-                fill
-                className="size-full object-cover rounded-2xl"
-              />
-            </div>
-            <div className="absolute -right-2 top-1/2 -translate-y-1/2 flex flex-col gap-1">
-              <div className="size-2 bg-purple-600 rounded-full"></div>
-              <div className="size-1.5 bg-purple-500 rounded-full"></div>
-              <div className="size-1 bg-purple-400 rounded-full"></div>
-            </div>
+      {/* Geometric Shapes */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 0.1, scale: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute right-20 top-20 h-40 w-40 rounded-full border-2 border-purple-500 backdrop-blur-sm"
+      />
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 0.1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="absolute left-10 top-40 h-32 w-32 rotate-45 border-2 border-purple-500 backdrop-blur-sm"
+      />
+
+      {/* Animated Dots */}
+      <div className="absolute left-0 top-0 h-full w-full">
+        {DOTS_POSITIONS.map((position, i) => (
+          <motion.div
+            key={i}
+            className="absolute h-2 w-2 rounded-full bg-purple-500 backdrop-blur-sm"
+            style={position}
+            animate={{
+              y: [0, 10, 0],
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: i * 0.1,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex h-full flex-col items-center justify-center">
+        <motion.h1
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className={`text-center text-6xl font-bold text-white ${phudu.className}`}
+        >
+          meet our{' '}
+          <span className="rounded bg-purple-500/80 px-4 py-2 backdrop-blur-sm">team</span>
+        </motion.h1>
+
+        {/* Introduction Text */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className={`mt-8 max-w-2xl text-center ${exo2.className}`}
+        >
+          <p className="text-lg text-gray-300 leading-relaxed">
+            Passionate innovators, creative minds, and dedicated professionals.
+            <br />
+            Together, we transform ideas into exceptional digital experiences.
+            <br />
+            Our diverse team brings expertise and innovation to every project.
+          </p>
+        </motion.div>
+
+        {/* Geometric Lines */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-8 h-1 w-32 bg-purple-500"
+        />
+
+        {/* Team Member Images */}
+        <div className="relative">
+          <div className="size-40 relative">
+            <Image
+              src="/images/team/hero-image-1.jpg"
+              alt="Team member 1"
+              fill
+              className="size-full object-cover rounded-2xl"
+            />
+          </div>
+          <div className="size-32 absolute -bottom-4 -right-4">
+            <Image
+              src="/images/team/hero-image-2.jpg"
+              alt="Team member 2"
+              fill
+              className="size-full object-cover rounded-2xl"
+            />
+          </div>
+          <div className="absolute -right-2 top-1/2 -translate-y-1/2 flex flex-col gap-1">
+            <div className="size-2 bg-purple-600 rounded-full"></div>
+            <div className="size-1.5 bg-purple-500 rounded-full"></div>
+            <div className="size-1 bg-purple-400 rounded-full"></div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 } 

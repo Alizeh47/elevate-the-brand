@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Header from '@/components/layout/Header';
+import BaseLayout from '@/components/layout/BaseLayout';
 import HeroSection from '@/components/case-studies/HeroSection';
 import CaseStudyList from '@/components/case-studies/CaseStudyList';
 import CallToAction from '@/components/case-studies/CallToAction';
@@ -11,13 +11,12 @@ export const metadata: Metadata = {
 
 export default function CaseStudiesPage() {
   return (
-    <>
-      <Header />
+    <BaseLayout>
       <main className="min-h-screen">
         <HeroSection />
         <CaseStudyList />
         <CallToAction />
       </main>
-    </>
+    </BaseLayout>
   );
 } 
