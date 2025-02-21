@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        letterform: ['Letterform', 'sans-serif'],
+        letterform: ['var(--font-poppins)', 'sans-serif'],
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
