@@ -14,11 +14,31 @@ const nextConfig = {
     // Warning: This allows production builds to complete even if there are ESLint errors
     ignoreDuringBuilds: true,
   },
-  // Remove experimental edge runtime as it might be causing issues
-  // experimental: {
-  //   runtime: 'edge'
-  // }
-  // You can add additional Next.js configuration below
+  optimizeFonts: true,
+  experimental: {
+    optimizeFonts: true,
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } }
+    ]
+  },
+  // Configure static file serving
+  async headers() {
+    return [
+      {
+        source: '/videos/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Accept-Ranges',
+            value: 'bytes'
+          }
+        ],
+      },
+    ]
+  }
 };
 
 module.exports = nextConfig; 

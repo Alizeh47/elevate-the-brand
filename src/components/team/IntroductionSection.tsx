@@ -209,31 +209,6 @@ export default function IntroductionSection() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Image Section */}
-        <div className="relative">
-          <div className="size-64 relative">
-            <Image
-              src="/images/team/intro-image-1.jpg"
-              alt="Team collaboration"
-              fill
-              className="size-full object-cover rounded-2xl"
-            />
-          </div>
-          <div className="size-64 absolute -bottom-8 -right-8">
-            <Image
-              src="/images/team/intro-image-2.jpg"
-              alt="Team brainstorming"
-              fill
-              className="size-full object-cover rounded-2xl"
-            />
-          </div>
-          <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2">
-            <div className="size-32 bg-purple-100 rounded-full"></div>
-            <div className="size-24 bg-purple-200 rounded-full"></div>
-            <div className="size-16 bg-purple-300 rounded-full"></div>
-          </div>
-        </div>
       </div>
 
       {/* Decorative Dots */}

@@ -172,12 +172,13 @@ export default function TeamMembersSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member) => (
             <div key={member.name} className="relative group overflow-hidden rounded-2xl">
-              <div className="relative size-96 overflow-hidden">
+              <div className="relative h-96 w-full overflow-hidden">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="size-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

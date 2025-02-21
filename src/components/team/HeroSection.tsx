@@ -140,7 +140,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center">
-        <motion.h1
+        <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -148,7 +148,7 @@ export default function HeroSection() {
         >
           meet our{' '}
           <span className="rounded bg-purple-500/80 px-4 py-2 backdrop-blur-sm">team</span>
-        </motion.h1>
+        </motion.div>
 
         {/* Introduction Text */}
         <motion.div
@@ -173,31 +173,6 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-8 h-1 w-32 bg-purple-500"
         />
-
-        {/* Team Member Images */}
-        <div className="relative">
-          <div className="size-40 relative">
-            <Image
-              src="/images/team/hero-image-1.jpg"
-              alt="Team member 1"
-              fill
-              className="size-full object-cover rounded-2xl"
-            />
-          </div>
-          <div className="size-32 absolute -bottom-4 -right-4">
-            <Image
-              src="/images/team/hero-image-2.jpg"
-              alt="Team member 2"
-              fill
-              className="size-full object-cover rounded-2xl"
-            />
-          </div>
-          <div className="absolute -right-2 top-1/2 -translate-y-1/2 flex flex-col gap-1">
-            <div className="size-2 bg-purple-600 rounded-full"></div>
-            <div className="size-1.5 bg-purple-500 rounded-full"></div>
-            <div className="size-1 bg-purple-400 rounded-full"></div>
-          </div>
-        </div>
       </div>
     </section>
   );

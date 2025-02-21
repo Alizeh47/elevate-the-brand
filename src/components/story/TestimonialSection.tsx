@@ -82,9 +82,8 @@ const TestimonialSection = () => {
                 loop
                 muted
                 playsInline
-                preload="auto"
               >
-                <source src="/videos/brad-testimonial.mp4" type="video/mp4" />
+                <source src="/videos/brad-testimonial.mp4?v=1" type="video/mp4" />
               </video>
               
               {/* Video Overlay */}

@@ -46,6 +46,7 @@ const IntroductionSection = () => {
                 src="/images/brad-profile.jpg"
                 alt="Brad&apos;s Profile"
                 fill
+                sizes="256px"
                 className="object-cover relative z-10"
               />
               {/* Decorative Corner Elements */}

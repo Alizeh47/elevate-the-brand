@@ -155,6 +155,7 @@ const ContactingSection = () => {
                     src={message.avatar}
                     alt={message.name}
                     fill
+                    sizes="(max-width: 768px) 48px, 48px"
                     className="object-cover"
                   />
                 </div>
