@@ -49,13 +49,13 @@ const ContactingSection = () => {
             <div
               key={`h-${i}`}
               className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-purple-300/40 to-transparent"
-          style={{
-                top: `${(i + 1) * 8.33}%`,
-                transform: `translateY(${Math.sin(i) * 20}px)`,
+              style={{
+                top: `${((i + 1) * 8.33).toFixed(2)}%`,
+                transform: `translateY(${(Math.sin(i) * 20).toFixed(2)}px)`,
               }}
             />
           ))}
-      </div>
+        </div>
 
         {/* Vertical Lines - More Prominent */}
         <div className="absolute inset-0">
@@ -64,8 +64,8 @@ const ContactingSection = () => {
               key={`v-${i}`}
               className="absolute h-full w-[2px] bg-gradient-to-b from-transparent via-pink-300/30 to-transparent"
               style={{
-                left: `${(i + 1) * 6.66}%`,
-                transform: `translateX(${Math.cos(i) * 20}px)`,
+                left: `${((i + 1) * 6.66).toFixed(2)}%`,
+                transform: `translateX(${(Math.cos(i) * 20).toFixed(2)}px)`,
               }}
             />
           ))}
